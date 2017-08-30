@@ -63,7 +63,7 @@ class TestHandler {
 
                         newIndex %= alpha.toList().size
 
-                        println("Decode: $newIndex")
+                        println("Key: ($key, ${alpha.indexOf(key)}) C: ($it, $index)")
 
                         alpha.toList()[Math.abs(newIndex)]
 
