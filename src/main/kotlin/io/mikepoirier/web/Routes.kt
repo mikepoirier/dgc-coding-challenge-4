@@ -16,7 +16,7 @@ class Routes(val testHandler: TestHandler) {
                 PUT("/", testHandler::handleEncode)
             }
             "/decode".nest {
-                GET("/", testHandler::handleDecode)
+                PUT("/", testHandler::handleDecode)
             }
         }
     }
