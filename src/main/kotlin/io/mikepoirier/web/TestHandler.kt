@@ -29,7 +29,12 @@ class TestHandler {
             .map {
                 var (key, text) = it
 
-                text = text.toUpperCase().map { it + alpha.indexOf(key) }.joinToString("")
+                text = text.toUpperCase().map {
+                    val index = alpha.indexOf(it)
+                    val newIndex = index + alpha.indexOf(key)
+
+                    alpha.toList()[newIndex]
+                }.joinToString("")
 
                 CipherResponse(text)
             }
@@ -43,7 +48,12 @@ class TestHandler {
             .map {
                 var (key, text) = it
 
-                text = text.toUpperCase().map { it - alpha.indexOf(key) }.joinToString("")
+                text = text.toUpperCase().map {
+                    val index = alpha.indexOf(it)
+                    val newIndex = index - alpha.indexOf(key)
+
+                    alpha.toList()[newIndex]
+                }.joinToString("")
 
                 CipherResponse(text)
             }
