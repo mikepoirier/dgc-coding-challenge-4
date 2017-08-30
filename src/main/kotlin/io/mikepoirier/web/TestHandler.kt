@@ -67,8 +67,11 @@ class TestHandler {
 
                         println("fn($it,$key) = ${alpha.toList()[25 - newIndex]}")
 
+                        var foo = 26 - newIndex
+                        if(foo == 26) foo = 0
+
                         alpha.reversed()
-                            .toList()[26 - newIndex]
+                            .toList()[foo]
                     }
                 }.joinToString("")
 
