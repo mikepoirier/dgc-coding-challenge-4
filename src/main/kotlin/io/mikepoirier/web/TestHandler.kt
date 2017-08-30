@@ -58,12 +58,12 @@ class TestHandler {
                     if(it == ' ') {
                         it
                     } else {
-                        val index = alpha.indexOf(key)
-                        var newIndex = index - alpha.indexOf(it)
+                        val index = alpha.indexOf(it)
+                        var newIndex = alpha.indexOf(key) - index
 
 //                        newIndex %= alpha.toList().size
 
-                        newIndex -= 26
+                        newIndex -= 25
 
                         println("Decode: $newIndex")
 
