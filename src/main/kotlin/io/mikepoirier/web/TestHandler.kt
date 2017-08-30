@@ -67,7 +67,7 @@ class TestHandler {
 
                         println("fn($it,$key) = ${alpha.toList()[25 - newIndex]}")
 
-                        var foo = 26 - newIndex
+                        var foo = 26 + newIndex
 
                         alpha.reversed()
                             .toList()[foo]
