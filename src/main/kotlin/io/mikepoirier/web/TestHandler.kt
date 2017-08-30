@@ -63,7 +63,10 @@ class TestHandler {
 
                         newIndex %= alpha.toList().size
 
-                        alpha.toList()[newIndex]
+                        println("Decode: $newIndex")
+
+                        alpha.toList()[Math.abs(newIndex)]
+
                     }
                 }.joinToString("")
 
