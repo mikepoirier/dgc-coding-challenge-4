@@ -61,7 +61,9 @@ class TestHandler {
                         val index = alpha.indexOf(key)
                         var newIndex = index - alpha.indexOf(it)
 
-                        newIndex %= alpha.toList().size
+//                        newIndex %= alpha.toList().size
+
+                        newIndex -= 26
 
                         println("Decode: $newIndex")
 
