@@ -61,7 +61,7 @@ class TestHandler {
                         val index = alpha.indexOf(it)
                         var newIndex = alpha.indexOf(key) - index
 
-                        newIndex = 25 - (newIndex % alpha.toList().size)
+                        newIndex %= alpha.toList().size
 
                         println("Decode: $newIndex")
 
@@ -74,29 +74,5 @@ class TestHandler {
             }
 
         return createJsonResponse(HttpStatus.OK, body)
-    }
-
-    fun handleGet(req: ServerRequest): Mono<ServerResponse> {
-        val response = Mono.just(counter.getAndIncrement())
-            .doOnNext {
-                log.info("Received Get")
-            }
-            .map {
-                mapOf(Pair("count", it))
-            }
-            .doOnNext {
-                Mono.just("After sleep")
-                    .doOnNext {
-                        val time = System.currentTimeMillis()
-                        var elapsed = 0L
-
-                        while (elapsed < 5000) {
-                            elapsed = System.currentTimeMillis() - time
-                        }
-                    }
-                    .subscribe { log.info(it) }
-            }
-
-        return createJsonStreamResponse(HttpStatus.OK, response, { ServerResponse.noContent().build() })
     }
 }
