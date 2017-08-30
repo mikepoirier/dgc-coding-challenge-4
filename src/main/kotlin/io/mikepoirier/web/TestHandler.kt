@@ -63,8 +63,12 @@ class TestHandler {
 
                         newIndex %= alpha.toList().size
 
+                        println("$it -> ${alpha.indexOf(it)}")
+
+                        println("fn($it,$key) = ${alpha.toList()[25 - newIndex]}")
+
                         alpha.reversed()
-                            .toList()[newIndex]
+                            .toList()[26 - newIndex]
                     }
                 }.joinToString("")
 
