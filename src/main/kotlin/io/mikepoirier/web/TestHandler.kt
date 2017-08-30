@@ -59,14 +59,12 @@ class TestHandler {
                         it
                     } else {
                         val index = alpha.indexOf(it)
-                        var newIndex = index - alpha.indexOf(key)
+                        var newIndex = index + alpha.indexOf(key)
 
                         newIndex %= alpha.toList().size
 
-                        println("Key: ($key, ${alpha.indexOf(key)}) C: ($it, $index)")
-
-                        alpha.toList()[Math.abs(newIndex)]
-
+                        alpha.reversed()
+                            .toList()[newIndex]
                     }
                 }.joinToString("")
 
