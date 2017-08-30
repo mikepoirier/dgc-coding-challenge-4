@@ -31,7 +31,9 @@ class TestHandler {
 
                 text = text.toUpperCase().map {
                     val index = alpha.indexOf(it)
-                    val newIndex = index + alpha.indexOf(key)
+                    var newIndex = index + alpha.indexOf(key)
+
+                    newIndex %= alpha.toList().size
 
                     alpha.toList()[newIndex]
                 }.joinToString("")
@@ -50,7 +52,9 @@ class TestHandler {
 
                 text = text.toUpperCase().map {
                     val index = alpha.indexOf(it)
-                    val newIndex = index - alpha.indexOf(key)
+                    var newIndex = index - alpha.indexOf(key)
+
+                    newIndex %= alpha.toList().size
 
                     alpha.toList()[newIndex]
                 }.joinToString("")
