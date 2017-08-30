@@ -59,7 +59,7 @@ class TestHandler {
                         it
                     } else {
                         val index = alpha.indexOf(it)
-                        var newIndex = index - alpha.indexOf(key)
+                        var newIndex = alpha.indexOf(key) - index
 
                         newIndex %= alpha.toList().size
 
