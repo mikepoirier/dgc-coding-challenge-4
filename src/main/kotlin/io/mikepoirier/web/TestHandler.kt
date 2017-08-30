@@ -58,19 +58,16 @@ class TestHandler {
                     if(it == ' ') {
                         it
                     } else {
-                        val index = alpha.indexOf(it)
-                        var newIndex = index - alpha.indexOf(key)
+                        var cIdx = alpha.indexOf(it)
+                        var keyIdx = alpha.indexOf(key)
+                        var newIdx = 26 + (cIdx - keyIdx)
+                        if(newIdx == 26) newIdx = 0
 
-                        newIndex %= alpha.toList().size
+                        println("cIdx = ${cIdx}")
+                        println("keyIdx = ${keyIdx}")
+                        println("newIdx = $newIdx -> ${alpha.toList()[newIdx]}")
 
-                        println("$it -> ${alpha.indexOf(it)}")
-
-                        println("fn($it,$key) = ${alpha.toList()[25 - newIndex]}")
-
-                        var foo = 26 + newIndex
-
-                        alpha.reversed()
-                            .toList()[foo]
+                        alpha.toList()[newIdx]
                     }
                 }.joinToString("")
 
