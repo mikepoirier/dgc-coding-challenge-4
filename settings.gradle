@@ -1,0 +1,3 @@
+rootProject.name = "dgc-coding-challenge-4"
+
+rootProject.buildFileName = 'build.gradle.kts'
