@@ -30,12 +30,16 @@ class TestHandler {
                 var (key, text) = it
 
                 text = text.toUpperCase().map {
-                    val index = alpha.indexOf(it)
-                    var newIndex = index + alpha.indexOf(key)
+                    if(it == ' ') {
+                        it
+                    } else {
+                        val index = alpha.indexOf(it)
+                        var newIndex = index + alpha.indexOf(key)
 
-                    newIndex %= alpha.toList().size
+                        newIndex %= alpha.toList().size
 
-                    alpha.toList()[newIndex]
+                        alpha.toList()[newIndex]
+                    }
                 }.joinToString("")
 
                 CipherResponse(text)
@@ -51,12 +55,16 @@ class TestHandler {
                 var (key, text) = it
 
                 text = text.toUpperCase().map {
-                    val index = alpha.indexOf(it)
-                    var newIndex = index - alpha.indexOf(key)
+                    if(it == ' ') {
+                        it
+                    } else {
+                        val index = alpha.indexOf(it)
+                        var newIndex = index - alpha.indexOf(key)
 
-                    newIndex %= alpha.toList().size
+                        newIndex %= alpha.toList().size
 
-                    alpha.toList()[newIndex]
+                        alpha.toList()[newIndex]
+                    }
                 }.joinToString("")
 
                 CipherResponse(text)
