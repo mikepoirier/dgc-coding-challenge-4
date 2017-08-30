@@ -59,7 +59,7 @@ class TestHandler {
                         it
                     } else {
                         val index = alpha.indexOf(it)
-                        var newIndex = index + alpha.indexOf(key)
+                        var newIndex = index - alpha.indexOf(key)
 
                         newIndex %= alpha.toList().size
 
@@ -68,7 +68,6 @@ class TestHandler {
                         println("fn($it,$key) = ${alpha.toList()[25 - newIndex]}")
 
                         var foo = 26 - newIndex
-                        if(foo == 26) foo = 0
 
                         alpha.reversed()
                             .toList()[foo]
