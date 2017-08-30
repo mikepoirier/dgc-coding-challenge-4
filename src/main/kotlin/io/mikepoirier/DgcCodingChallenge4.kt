@@ -4,8 +4,8 @@ import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 
 @SpringBootApplication
-class CodingChallengeTemplateApplication
+class DgcCodingChallenge4
 
 fun main(args: Array<String>) {
-    SpringApplication.run(CodingChallengeTemplateApplication::class.java, *args)
+    SpringApplication.run(DgcCodingChallenge4::class.java, *args)
 }

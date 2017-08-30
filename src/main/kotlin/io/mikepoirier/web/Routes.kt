@@ -12,11 +12,11 @@ class Routes(val testHandler: TestHandler) {
     @Bean
     fun apiRoutes() = router {
         accept(MediaType.APPLICATION_JSON).nest {
-            "/path".nest {
-                GET("/", { req -> Mono.empty() })
+            "/encode".nest {
+                PUT("/", testHandler::handleEncode)
             }
-            "/test".nest {
-                GET("/", testHandler::handleGet)
+            "/decode".nest {
+                GET("/", testHandler::handleDecode)
             }
         }
     }
